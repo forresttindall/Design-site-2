@@ -192,7 +192,7 @@ function App() {
           <span className="small-text">Index (01)</span>
         </div>
         
-        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--spacing-xl)' }}>
+        <div className="project-grid">
           {projects.map((project, index) => (
             <article key={index} className="project-card">
               <div style={{ 
@@ -248,12 +248,7 @@ function App() {
           <span className="small-text">Index (02)</span>
         </div>
 
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-          gap: 'var(--spacing-xl)',
-          alignItems: 'start'
-        }}>
+        <div className="project-grid" style={{ alignItems: 'start' }}>
           {graphicDesign.map((item, i) => (
              <div key={i} style={{ marginBottom: 'var(--spacing-lg)' }}>
                 <div style={{ 

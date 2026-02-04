@@ -33,7 +33,7 @@
   --fs-lg: 24px;
   --fs-xl: 48px;
   --fs-xxl: clamp(48px, 14vw, 96px);
-  --fs-display: 14vw;
+  --fs-display: clamp(64px, 14vw, 300px);
 }
 
 * {
@@ -107,4 +107,18 @@ ul {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   line-height: 1.6;
+}
+
+.project-grid {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 2400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1600px) {
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
 }
