@@ -6,117 +6,143 @@ const projects = [
     category: "SaaS Platform",
     image: "/images/ricochet mockup.png",
     description: "Design and prototyping website for Ricochet.",
-    year: "2024"
+    year: "2026"
   },
   {
     title: "Amore",
     category: "Hospitality",
     image: "/images/amore mockup.png",
     description: "Boise Restaurant website design and development.",
-    year: "2023"
+    year: "2025"
   },
   {
     title: "Clearfeed",
     category: "Open Source",
     image: "/images/clearfeed.png",
     description: "Private RSS feed reader desktop app interface.",
-    year: "2023"
+    year: "2025"
   },
   {
     title: "Fastburger",
     category: "Hospitality",
     image: "/images/fastburger.png",
     description: "Burger Restaurant brand and web presence.",
-    year: "2023"
+    year: "2025"
   },
   {
     title: "Arrowleaf",
     category: "Hospitality",
     image: "/images/arrowleaf.png",
     description: "Restaurant website design and development.",
-    year: "2023"
+    year: "2024"
   },
   {
     title: "Boise Analog",
     category: "Community",
     image: "/images/analogmockup.png",
     description: "Film photography club identity and web.",
-    year: "2022"
+    year: "2025"
   }
 ];
 
 const graphicDesign = [
   {
-    brand: "Ricochet",
-    work: "Asset Design",
+    title: "Ricochet",
+    category: "Asset Design",
     image: "/images/Hourly Sales.PNG",
-    team: "Superbase"
+    description: "Visual assets for SaaS platform.",
+    year: "2026"
   },
   {
-    brand: "Boise Analog Club",
-    work: "Brand Identity & Marketing",
-    image: "/images/analogflyer.png"
+    title: "Boise Analog Club",
+    category: "Brand Identity",
+    image: "/images/analogflyer.png",
+    description: "Marketing materials and brand identity.",
+    year: "2025"
   },
   {
-    brand: "Lost River Knives",
-    work: "Brand Identity",
-    image: "/images/LRK.jpg"
+    title: "Lost River Knives",
+    category: "Brand Identity",
+    image: "/images/LRK.jpg",
+    description: "Brand identity and visual system.",
+    year: "2025"
   },
   {
-    brand: "Ricochet",
-    work: "Asset Design",
+    title: "Ricochet",
+    category: "Asset Design",
     image: "/images/Exportable tables.PNG",
-    team: "Superbase"
+    description: "Visual assets for SaaS platform.",
+    year: "2026"
   },
   {
-    brand: "Boise Analog Club",
-    work: "Poster Design",
-    image: "/images/propagranda 3.png"
+    title: "Boise Analog Club",
+    category: "Poster Design",
+    image: "/images/propagranda 3.png",
+    description: "Promotional poster design.",
+    year: "2025"
   },
   {
-    brand: "Boise Analog Club",
-    work: "Brand Identity & Marketing",
-    image: "/images/BAC FEBUARY.png"
+    title: "Boise Analog Club",
+    category: "Brand Identity",
+    image: "/images/BAC FEBUARY.png",
+    description: "Monthly event marketing design.",
+    year: "2025"
   },
   {
-    brand: "Westside Gunn",
-    work: "Album Art Design",
-    image: "/images/westsidegun mockup 1.png"
+    title: "Westside Gunn",
+    category: "Album Art Design",
+    image: "/images/westsidegun mockup 1.png",
+    description: "Concept album artwork design.",
+    year: "2025"
   },
   {
-    brand: "Creationbase",
-    work: "Asset Design",
-    image: "/images/launch art.png"
+    title: "Creationbase",
+    category: "Asset Design",
+    image: "/images/launch art.png",
+    description: "Digital assets for launch campaign.",
+    year: "2025"
   },
   {
-    brand: "Parallax Zine",
-    work: "Brand Identity",
-    image: "/images/parallax shirt 3.jpg"
+    title: "Parallax Zine",
+    category: "Brand Identity",
+    image: "/images/parallax shirt 3.jpg",
+    description: "Merchandise design and branding.",
+    year: "2025"
   },
   {
-    brand: "Open Netizen",
-    work: "Brand Identity",
-    image: "/images/OPEN NETIZEN.jpg"
+    title: "Open Netizen",
+    category: "Brand Identity",
+    image: "/images/OPEN NETIZEN.jpg",
+    description: "Brand identity and visual system.",
+    year: "2025"
   },
   {
-    brand: "Paradox Labs",
-    work: "Brand Identity",
-    image: "/images/paradoxlabscard.jpg"
+    title: "Paradox Labs",
+    category: "Brand Identity",
+    image: "/images/paradoxlabscard.jpg",
+    description: "Business card and identity design.",
+    year: "2025"
   },
   {
-    brand: "Moab Brewery",
-    work: "Illustration & Design",
-    image: "/images/beer-3.jpg"
+    title: "Moab Brewery",
+    category: "Illustration",
+    image: "/images/beer-3.jpg",
+    description: "Label illustration and design.",
+    year: "2025"
   },
   {
-    brand: "Conway The Machine",
-    work: "Album Art Design",
-    image: "/images/conway the machine 1 mockup.png"
+    title: "Conway The Machine",
+    category: "Album Art Design",
+    image: "/images/conway the machine 1 mockup.png",
+    description: "Concept album artwork design.",
+    year: "2025"
   },
   {
-    brand: "Boise Analog Club",
-    work: "Brand Identity",
-    image: "/images/bac.png"
+    title: "Boise Analog Club",
+    category: "Brand Identity",
+    image: "/images/bac.png",
+    description: "Logo and visual identity system.",
+    year: "2025"
   }
 ];
 
@@ -249,8 +275,8 @@ function App() {
         </div>
 
         <div className="project-grid" style={{ alignItems: 'start' }}>
-          {graphicDesign.map((item, i) => (
-             <div key={i} style={{ marginBottom: 'var(--spacing-lg)' }}>
+          {graphicDesign.map((project, i) => (
+             <article key={i} className="project-card">
                 <div style={{ 
                  marginBottom: 'var(--spacing-sm)', 
                  overflow: 'hidden',
@@ -262,8 +288,8 @@ function App() {
                  backgroundColor: '#000'
                }}>
                  <img 
-                    src={item.image} 
-                    alt={item.brand} 
+                    src={project.image} 
+                    alt={project.title} 
                     style={{ 
                       width: 'auto',
                       height: '100%',
@@ -284,10 +310,16 @@ function App() {
                   />
                </div>
               <div className="flex" style={{ justifyContent: 'space-between', borderTop: '1px solid #333', paddingTop: 'var(--spacing-xs)' }}>
-                <div className="small-text" style={{ fontWeight: 'bold' }}>{item.brand}</div>
-                <div className="small-text" style={{ opacity: 0.7, textAlign: 'right' }}>{item.work}</div>
+                <div>
+                  <h3 className="small-text" style={{ fontWeight: 'bold' }}>{project.title}</h3>
+                  <p className="small-text" style={{ opacity: 0.7 }}>{project.description}</p>
+                </div>
+                <div className="small-text" style={{ textAlign: 'right' }}>
+                  <div>{project.category}</div>
+                  <div>{project.year}</div>
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
