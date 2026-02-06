@@ -36,27 +36,15 @@ const projects = [
     description: "Restaurant website design and development.",
     year: "2024"
   },
-  {
-    title: "Boise Analog",
-    category: "Community",
-    image: "/images/analogmockup.png",
-    description: "Film photography club identity and web.",
-    year: "2025"
-  }
+
 ];
 
 const graphicDesign = [
-  {
-    title: "Ricochet",
-    category: "Asset Design",
-    image: "/images/Hourly Sales.PNG",
-    description: "Visual assets for SaaS platform.",
-    year: "2026"
-  },
+ 
   {
     title: "Boise Analog Club",
     category: "Brand Identity",
-    image: "/images/analogflyer.png",
+    image: "/images/BAC january.png",
     description: "Marketing materials and brand identity.",
     year: "2025"
   },
@@ -66,13 +54,6 @@ const graphicDesign = [
     image: "/images/LRK.jpg",
     description: "Brand identity and visual system.",
     year: "2025"
-  },
-  {
-    title: "Ricochet",
-    category: "Asset Design",
-    image: "/images/Exportable tables.PNG",
-    description: "Visual assets for SaaS platform.",
-    year: "2026"
   },
   {
     title: "Boise Analog Club",
@@ -102,13 +83,7 @@ const graphicDesign = [
     description: "Digital assets for launch campaign.",
     year: "2025"
   },
-  {
-    title: "Parallax Zine",
-    category: "Brand Identity",
-    image: "/images/parallax shirt 3.jpg",
-    description: "Merchandise design and branding.",
-    year: "2025"
-  },
+
   {
     title: "Open Netizen",
     category: "Brand Identity",

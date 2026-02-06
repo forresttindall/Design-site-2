@@ -33,7 +33,7 @@
   --fs-lg: 24px;
   --fs-xl: 48px;
   --fs-xxl: clamp(48px, 14vw, 96px);
-  --fs-display: clamp(64px, 14vw, 300px);
+  --fs-display: clamp(64px, 14vw, 260px);
 }
 
 * {
