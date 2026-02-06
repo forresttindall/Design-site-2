@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     title: "Ricochet",
-    category: "Product Design",
+    category: "Web Design",
     image: "/images/ricochet mockup.png",
     description: "SaaS platform design and prototyping.",
     year: "2026"
