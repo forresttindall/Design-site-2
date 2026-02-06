@@ -6,35 +6,35 @@ const projects = [
     title: "Ricochet",
     category: "Product Design",
     image: "/images/ricochet mockup.png",
-    description: "Design and prototyping website for Ricochet.",
+    description: "SaaS platform design and prototyping.",
     year: "2026"
   },
   {
     title: "Amore",
     category: "Web Design & Dev",
     image: "/images/amore mockup.png",
-    description: "Boise Restaurant website design and development.",
+    description: "Website design and development.",
     year: "2025"
   },
   {
     title: "Clearfeed",
     category: "UI/UX Design",
     image: "/images/clearfeed.png",
-    description: "Private RSS feed reader desktop app interface.",
+    description: "RSS feed reader interface design.",
     year: "2025"
   },
   {
     title: "Fastburger",
     category: "Brand & Web Design",
     image: "/images/fastburger.png",
-    description: "Burger Restaurant brand and web presence.",
+    description: "Brand design and web presence.",
     year: "2025"
   },
   {
     title: "Arrowleaf",
     category: "Web Design & Dev",
     image: "/images/arrowleaf.png",
-    description: "Restaurant website design and development.",
+    description: "Website design and development.",
     year: "2024"
   },
 
@@ -46,7 +46,7 @@ const graphicDesign = [
     title: "Boise Analog Club",
     category: "Brand Identity",
     image: "/images/BAC january.png",
-    description: "Marketing materials and brand identity.",
+    description: "Asset desin and brand identity.",
     year: "2025"
   },
   {
