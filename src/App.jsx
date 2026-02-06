@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -132,19 +133,24 @@ function App() {
   return (
     <div className="app">
       {/* Header */}
-      <header style={{ 
-        position: 'fixed', 
-        top: 0, 
-        left: 0, 
-        right: 0, 
-        padding: 'var(--spacing-md)', 
-        display: 'flex', 
-        justifyContent: 'space-between',
-        alignItems: 'flex-start',
-        zIndex: 100,
-        mixBlendMode: 'difference',
-        color: '#fff'
-      }}>
+      <motion.header 
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        style={{ 
+          position: 'fixed', 
+          top: 0, 
+          left: 0, 
+          right: 0, 
+          padding: 'var(--spacing-md)', 
+          display: 'flex', 
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          zIndex: 100,
+          mixBlendMode: 'difference',
+          color: '#fff'
+        }}
+      >
         <div className="logo small-text">
           Forrest Tindall<br />
           Design & Dev
@@ -153,7 +159,7 @@ function App() {
           Boise, ID<br />
           {time}
         </div>
-      </header>
+      </motion.header>
 
       {/* Hero */}
       <section style={{ 
@@ -167,23 +173,53 @@ function App() {
         <h1 style={{ 
           fontFamily: 'var(--font-display)', 
           fontSize: 'var(--fs-display)', 
-          lineHeight: 0.8,
+          lineHeight: 1,
           textTransform: 'uppercase',
           letterSpacing: '-0.04em',
           marginBottom: 'var(--spacing-lg)'
         }}>
-          Visual<br />
-          System<br />
-          Design
+          <div style={{ overflow: 'hidden', paddingBottom: '0.1em' }}>
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            >
+              Visual
+            </motion.div>
+          </div>
+          <div style={{ overflow: 'hidden', paddingBottom: '0.1em', marginTop: '-0.2em' }}>
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            >
+              System
+            </motion.div>
+          </div>
+          <div style={{ overflow: 'hidden', paddingBottom: '0.1em', marginTop: '-0.2em' }}>
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+            >
+              Design
+            </motion.div>
+          </div>
         </h1>
-        <div className="flex" style={{ justifyContent: 'space-between', alignItems: 'flex-end' }}>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex" 
+          style={{ justifyContent: 'space-between', alignItems: 'flex-end' }}
+        >
           <p className="small-text" style={{ maxWidth: '300px' }}>
             Specializing in brand identity, interface design, and full-stack development. Creating cutting-edge digital experiences with a focus on typography and performance.
           </p>
           <div className="small-text">
             (SCROLL)
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Selected Work */}
@@ -195,7 +231,14 @@ function App() {
         
         <div className="project-grid">
           {projects.map((project, index) => (
-            <article key={index} className="project-card">
+            <motion.article 
+              key={index} 
+              className="project-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               <div style={{ 
                 marginBottom: 'var(--spacing-sm)', 
                 overflow: 'hidden',
@@ -237,7 +280,7 @@ function App() {
                   <div>{project.year}</div>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </section>
@@ -251,7 +294,14 @@ function App() {
 
         <div className="project-grid" style={{ alignItems: 'start' }}>
           {graphicDesign.map((project, i) => (
-             <article key={i} className="project-card">
+             <motion.article 
+               key={i} 
+               className="project-card"
+               initial={{ opacity: 0, y: 50 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true, margin: "-10%" }}
+               transition={{ duration: 0.6, ease: "easeOut" }}
+             >
                 <div style={{ 
                  marginBottom: 'var(--spacing-sm)', 
                  overflow: 'hidden',
@@ -294,13 +344,19 @@ function App() {
                   <div>{project.year}</div>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </section>
 
       {/* Footer / Contact */}
-      <section style={{ padding: 'var(--spacing-xxl) var(--spacing-md)', minHeight: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        style={{ padding: 'var(--spacing-xxl) var(--spacing-md)', minHeight: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+      >
         <div>
           <h2 className="section-title">Let's Work<br />Together</h2>
         </div>
@@ -317,7 +373,7 @@ function App() {
           <div>
             <p className="small-text" style={{ marginBottom: 'var(--spacing-md)' }}>SERVICES</p>
             <ul className="small-text">
-              <li>VISIAL SYSTEM DESIGN</li>
+              <li>VISUAL SYSTEM DESIGN</li>
               <li>WEB DEVELOPMENT</li>
               <li>BRAND IDENTITY</li>
               <li>ART DIRECTION</li>
@@ -330,7 +386,7 @@ function App() {
           <p className="small-text" style={{ flex: 1 }}>© 2026 FORREST TINDALL</p>
           <p className="small-text">DESIGNED & CODED IN BOISE, ID</p>
         </div>
-      </section>
+      </motion.section>
     </div>
   )
 }
