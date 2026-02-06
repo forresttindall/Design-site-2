@@ -4,35 +4,35 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     title: "Ricochet",
-    category: "SaaS Platform",
+    category: "Product Design",
     image: "/images/ricochet mockup.png",
     description: "Design and prototyping website for Ricochet.",
     year: "2026"
   },
   {
     title: "Amore",
-    category: "Hospitality",
+    category: "Web Design & Dev",
     image: "/images/amore mockup.png",
     description: "Boise Restaurant website design and development.",
     year: "2025"
   },
   {
     title: "Clearfeed",
-    category: "Open Source",
+    category: "UI/UX Design",
     image: "/images/clearfeed.png",
     description: "Private RSS feed reader desktop app interface.",
     year: "2025"
   },
   {
     title: "Fastburger",
-    category: "Hospitality",
+    category: "Brand & Web Design",
     image: "/images/fastburger.png",
     description: "Burger Restaurant brand and web presence.",
     year: "2025"
   },
   {
     title: "Arrowleaf",
-    category: "Hospitality",
+    category: "Web Design & Dev",
     image: "/images/arrowleaf.png",
     description: "Restaurant website design and development.",
     year: "2024"
@@ -275,8 +275,8 @@ function App() {
                   <h3 className="small-text" style={{ fontWeight: 'bold' }}>{project.title}</h3>
                   <p className="small-text" style={{ opacity: 0.7 }}>{project.description}</p>
                 </div>
-                <div className="small-text" style={{ textAlign: 'right' }}>
-                  <div>{project.category}</div>
+                <div className="small-text" style={{ textAlign: 'right', flexShrink: 0 }}>
+                  <div style={{ whiteSpace: 'nowrap' }}>{project.category}</div>
                   <div>{project.year}</div>
                 </div>
               </div>
@@ -339,8 +339,8 @@ function App() {
                   <h3 className="small-text" style={{ fontWeight: 'bold' }}>{project.title}</h3>
                   <p className="small-text" style={{ opacity: 0.7 }}>{project.description}</p>
                 </div>
-                <div className="small-text" style={{ textAlign: 'right' }}>
-                  <div>{project.category}</div>
+                <div className="small-text" style={{ textAlign: 'right', flexShrink: 0 }}>
+                  <div style={{ whiteSpace: 'nowrap' }}>{project.category}</div>
                   <div>{project.year}</div>
                 </div>
               </div>
