@@ -49,15 +49,7 @@ const graphicDesign = [
     description: "Asset design and brand identity.",
     year: "2025"
   },
- 
 
-  {
-    title: "Lost River Knives",
-    category: "Brand Identity",
-    image: "/images/LRK.jpg",
-    description: "Brand identity and visual system.",
-    year: "2025"
-  },
     {
     title: "Boise Analog Club",
     category: "Brand Identity",
