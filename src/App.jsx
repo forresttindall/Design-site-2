@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
   {
@@ -41,14 +41,16 @@ const projects = [
 ];
 
 const graphicDesign = [
- 
+
   {
     title: "Boise Analog Club",
     category: "Brand Identity",
-    image: "/images/BAC january.png",
-    description: "Asset desin and brand identity.",
+    image: "/images/bac march.png",
+    description: "Asset design and brand identity.",
     year: "2025"
   },
+ 
+
   {
     title: "Lost River Knives",
     category: "Brand Identity",
@@ -56,13 +58,14 @@ const graphicDesign = [
     description: "Brand identity and visual system.",
     year: "2025"
   },
-  {
+    {
     title: "Boise Analog Club",
-    category: "Poster Design",
-    image: "/images/propagranda 3.png",
-    description: "Promotional poster design.",
+    category: "Brand Identity",
+    image: "/images/BAC january.png",
+    description: "Asset design and brand identity.",
     year: "2025"
   },
+
   {
     title: "Boise Analog Club",
     category: "Brand Identity",
@@ -82,6 +85,14 @@ const graphicDesign = [
     category: "Asset Design",
     image: "/images/launch art.png",
     description: "Digital assets for launch campaign.",
+    year: "2025"
+  },
+
+    {
+    title: "Boise Analog Club",
+    category: "Poster Design",
+    image: "/images/propagranda 3.png",
+    description: "Promotional poster design.",
     year: "2025"
   },
 
@@ -122,8 +133,99 @@ const graphicDesign = [
   }
 ];
 
+const ProjectModal = ({ project, onClose }) => {
+  if (!project) return null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(0, 0, 0, 0.9)',
+        zIndex: 1000,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 'var(--spacing-md)',
+        cursor: 'zoom-out'
+      }}
+    >
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        transition={{ type: "spring", damping: 25, stiffness: 300 }}
+        onClick={onClose}
+        style={{
+          width: '100%',
+          maxWidth: '1200px',
+          maxHeight: '90vh',
+          display: 'flex',
+          flexDirection: 'column',
+          cursor: 'zoom-out',
+          position: 'relative'
+        }}
+      >
+        <button 
+          onClick={onClose}
+          style={{
+            position: 'absolute',
+            top: '-40px',
+            right: 0,
+            background: 'none',
+            border: 'none',
+            color: '#fff',
+            fontSize: 'var(--fs-lg)',
+            cursor: 'pointer',
+            fontFamily: 'var(--font-mono)',
+            textTransform: 'uppercase'
+          }}
+        >
+          [CLOSE]
+        </button>
+        <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <img 
+            src={project.image} 
+            alt={project.title}
+            style={{ 
+              maxWidth: '100%', 
+              maxHeight: '80vh', 
+              objectFit: 'contain',
+              display: 'block'
+            }} 
+          />
+        </div>
+        <div style={{ 
+          marginTop: 'var(--spacing-md)', 
+          color: '#fff', 
+          display: 'flex', 
+          justifyContent: 'space-between',
+          alignItems: 'flex-start'
+        }}>
+          <div>
+            <h2 className="section-title" style={{ fontSize: 'var(--fs-lg)', marginBottom: 'var(--spacing-xs)', color: '#fff' }}>{project.title}</h2>
+            <p className="small-text" style={{ opacity: 0.8 }}>{project.description}</p>
+          </div>
+          <div className="small-text" style={{ textAlign: 'right' }}>
+            <div>{project.category}</div>
+            <div>{project.year}</div>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 function App() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
@@ -148,18 +250,25 @@ function App() {
           alignItems: 'flex-start',
           zIndex: 100,
           mixBlendMode: 'difference',
-          color: '#fff'
+          color: '#fff',
+          pointerEvents: 'none'
         }}
       >
-        <div className="logo small-text">
+        <div className="logo small-text" style={{ pointerEvents: 'auto' }}>
           Forrest Tindall<br />
           Design & Dev
         </div>
-        <div className="small-text" style={{ textAlign: 'right' }}>
+        <div className="small-text" style={{ textAlign: 'right', pointerEvents: 'auto' }}>
           Boise, ID<br />
           {time}
         </div>
       </motion.header>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+        )}
+      </AnimatePresence>
 
       {/* Hero */}
       <section style={{ 
@@ -238,6 +347,8 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
+              onClick={() => setSelectedProject(project)}
+              style={{ cursor: 'pointer' }}
             >
               <div style={{ 
                 marginBottom: 'var(--spacing-sm)', 
@@ -301,6 +412,8 @@ function App() {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true, margin: "-10%" }}
                transition={{ duration: 0.6, ease: "easeOut" }}
+               onClick={() => setSelectedProject(project)}
+               style={{ cursor: 'pointer' }}
              >
                 <div style={{ 
                  marginBottom: 'var(--spacing-sm)', 
