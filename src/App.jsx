@@ -42,6 +42,14 @@ const projects = [
 
 const graphicDesign = [
 
+
+    {
+    title: "Boise Analog Club",
+    category: "Brand Identity",
+    image: "/images/bac gen x soft club.png",
+    description: "Asset design and brand identity.",
+    year: "2025"
+  },
   {
     title: "Boise Analog Club",
     category: "Brand Identity",
