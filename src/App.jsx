@@ -51,9 +51,9 @@ const graphicDesign = [
     year: "2025"
   },
   {
-    title: "Boise Analog Club",
+    title: "Analogix Zine",
     category: "Brand Identity",
-    image: "/images/bac march.png",
+    image: "/images/analogix submissions.png",
     description: "Asset design and brand identity.",
     year: "2025"
   },
